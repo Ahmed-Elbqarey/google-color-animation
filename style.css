@@ -1,0 +1,66 @@
+body{
+  background-color: #333;
+}
+.container{
+  margin: 20px auto;
+}
+div{
+  width: 300px;
+  height: 50px;
+  border-radius: 50px;
+  margin: 200px auto;
+  position: relative;
+  overflow: hidden;
+}
+div::before{
+  content: "ahmed elbqarey";
+  position: absolute;
+  top: 10%;
+  left: 2%;
+  width: calc(100% - 10px);
+  height:calc(100% - 10px); 
+  border-radius: inherit;
+  background-color: #333;
+  color: white;
+  font-size: 25px;
+  font-weight: 600;
+  font-family: serif;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; 
+}
+div::after{
+  content: "";
+  position: absolute;
+  top: -150px;
+  left: -20px;
+  width: 350px;
+  height: 350px;
+  background: conic-gradient(
+    #EB4235 45deg,
+    #F9BC04 45deg, #F9BC04 90deg,
+    #4385F5 90deg, #4385F5 135deg,
+    #34A853 135deg,#34A853  180deg,
+    #EB4235 180deg,#EB4235 225deg,
+    #F9BC04 225deg,#F9BC04 270deg,
+    #4385F5 270deg,#4385F5 315deg,
+    #34A853 315deg,#34A853 360deg
+  );
+  animation-name: rotate;
+  animation-duration: 6s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes rotate{
+  100%{
+    transform: rotate(360deg);
+  }
+}
+@media screen and (max-width:550px) {
+  .container{
+    margin: 50px auto;
+    width: 80%;
+  }
+}
